@@ -58,3 +58,44 @@ yearMonth = 2022-03
 monthDay = --03-20
 ```
 
+## of方法
+
+基本使用
+
+```java
+// 指定年月日
+LocalDate localDate = LocalDate.of(2000, 7, 7);
+// 指定时分秒
+LocalTime localTime = LocalTime.of(12, 3, 6);
+// LocalDateTime的特殊使用
+LocalDateTime localDateTime1 = LocalDateTime.of(localDate, localTime);
+LocalDateTime localDateTime2 = LocalDateTime.of(2000, 7, 7, 12, 3, 6);
+
+System.out.println("localDate = " + localDate);
+System.out.println("localTime = " + localTime);
+System.out.println("localDateTime1 = " + localDateTime1);
+System.out.println("localDateTime2 = " + localDateTime2);
+```
+
+输出结果
+
+```java
+localDate = 2000-07-07
+localTime = 12:03:06
+localDateTime1 = 2000-07-07T12:03:06
+localDateTime2 = 2000-07-07T12:03:06
+```
+
+## 时区
+
+```java
+// 获取所有时区
+Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+for (String availableZoneId : availableZoneIds) {
+	System.out.println(availableZoneId);
+}
+// 获取当前系统时区
+ZoneId zoneId = ZoneId.systemDefault();
+System.out.println("zoneId = " + zoneId);
+```
+
